@@ -12,8 +12,7 @@ function Header() {
         <img
           src={logo}
           alt="logo"
-          width={100}
-          height={50}
+          className="w-28"
         />
         <h1 className="text-xl font-semibold">Velocia</h1>
       </div>
