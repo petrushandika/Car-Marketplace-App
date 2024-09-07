@@ -1,5 +1,5 @@
 {
-  "CarDetails": [
+  "carDetails": [
     {
       "label": "Listing Title",
       "name": "listingTitle",
@@ -94,7 +94,7 @@
       "required": true,
       "options": ["Altima", "3 Series", "Elantra", "Others"],
       "column": 1,
-      "icon": "FaCarAlt"
+      "icon": "FaCarSide"
     },
     {
       "label": "Year",
@@ -166,7 +166,7 @@
       "required": true,
       "options": ["Automatic", "Manual", "CVT"],
       "column": 1,
-      "icon": "FaCog"
+      "icon": "FaCogs"
     },
     {
       "label": "Fuel Type",
@@ -200,7 +200,7 @@
       "fieldType": "text",
       "required": true,
       "column": 1,
-      "icon": "FaCog"
+      "icon": "FaCogs"
     },
     {
       "label": "Cylinder",
@@ -235,7 +235,7 @@
       "required": true,
       "options": ["2", "3", "4", "5"],
       "column": 1,
-      "icon": "FaDoorOpen"
+      "icon": "FaDoorClosed"
     },
     {
       "label": "VIN",
@@ -243,7 +243,7 @@
       "fieldType": "text",
       "required": true,
       "column": 2,
-      "icon": "FaBarcode"
+      "icon": "FaIdCard"
     },
     {
       "label": "Offer Type",
@@ -252,7 +252,7 @@
       "required": true,
       "options": ["For Sale", "For Lease"],
       "column": 1,
-      "icon": "FaHandshake"
+      "icon": "FaTags"
     },
     {
       "label": "Listing Description",

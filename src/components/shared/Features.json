@@ -1,28 +1,8 @@
 {
-  "Features": [
+  "features": [
     {
       "label": "Air Conditioner",
       "name": "airConditioner",
-      "fieldType": "checkbox"
-    },
-    {
-      "label": "Digital Odometer",
-      "name": "digitalOdometer",
-      "fieldType": "checkbox"
-    },
-    {
-      "label": "Power Steering",
-      "name": "powerSteering",
-      "fieldType": "checkbox"
-    },
-    {
-      "label": "Cruise Control",
-      "name": "cruiseControl",
-      "fieldType": "checkbox"
-    },
-    {
-      "label": "Sunroof",
-      "name": "sunroof",
       "fieldType": "checkbox"
     },
     {
@@ -31,58 +11,58 @@
       "fieldType": "checkbox"
     },
     {
-      "label": "Heated Seats",
-      "name": "heatedSeats",
+      "label": "Touchscreen Display",
+      "name": "touchscreenDisplay",
       "fieldType": "checkbox"
     },
     {
-      "label": "Bluetooth Connectivity",
-      "name": "bluetoothConnectivity",
+      "label": "Child Safety Locks",
+      "name": "childSafetyLocks",
       "fieldType": "checkbox"
     },
     {
-      "label": "Backup Camera",
-      "name": "backupCamera",
+      "label": "Stability Control",
+      "name": "stabilityControl",
       "fieldType": "checkbox"
     },
     {
-      "label": "Parking Sensors",
-      "name": "parkingSensors",
+      "label": "Rain Sensing Wiper",
+      "name": "rainSensingWiper",
       "fieldType": "checkbox"
     },
     {
-      "label": "Remote Start",
-      "name": "remoteStart",
+      "label": "Comfort & Convenience",
+      "name": "comfortAndConvenience",
       "fieldType": "checkbox"
     },
     {
-      "label": "Keyless Entry",
-      "name": "keylessEntry",
+      "label": "Bluetooth",
+      "name": "bluetooth",
       "fieldType": "checkbox"
     },
     {
-      "label": "Navigation System",
-      "name": "navigationSystem",
+      "label": "Vanity Mirror",
+      "name": "vanityMirror",
       "fieldType": "checkbox"
     },
     {
-      "label": "Apple CarPlay / Android Auto",
-      "name": "appleCarPlayAndroidAuto",
+      "label": "Digital Odometer",
+      "name": "digitalOdometer",
       "fieldType": "checkbox"
     },
     {
-      "label": "Alloy Wheels",
-      "name": "alloyWheels",
+      "label": "Panoramic Moonroof",
+      "name": "panoramicMoonroof",
       "fieldType": "checkbox"
     },
     {
-      "label": "Anti-lock Braking System (ABS)",
-      "name": "abs",
+      "label": "Anti-lock Braking",
+      "name": "antiLockBraking",
       "fieldType": "checkbox"
     },
     {
-      "label": "Airbags",
-      "name": "airbags",
+      "label": "Driver Air Bag",
+      "name": "driverAirBag",
       "fieldType": "checkbox"
     },
     {
@@ -91,53 +71,58 @@
       "fieldType": "checkbox"
     },
     {
-      "label": "Four-Wheel Drive (4WD)",
-      "name": "fourWheelDrive",
+      "label": "Rear Spoiler",
+      "name": "rearSpoiler",
       "fieldType": "checkbox"
     },
     {
-      "label": "Lane Departure Warning",
-      "name": "laneDepartureWarning",
+      "label": "Android Auto",
+      "name": "androidAuto",
       "fieldType": "checkbox"
     },
     {
-      "label": "Blind Spot Monitoring",
-      "name": "blindSpotMonitoring",
+      "label": "HomeLink",
+      "name": "homeLink",
       "fieldType": "checkbox"
     },
     {
-      "label": "Adaptive Headlights",
-      "name": "adaptiveHeadlights",
+      "label": "Heater",
+      "name": "heater",
       "fieldType": "checkbox"
     },
     {
-      "label": "Fog Lights",
-      "name": "fogLights",
+      "label": "Tachometer",
+      "name": "tachometer",
       "fieldType": "checkbox"
     },
     {
-      "label": "Tow Package",
-      "name": "towPackage",
+      "label": "Brake Assist",
+      "name": "brakeAssist",
       "fieldType": "checkbox"
     },
     {
-      "label": "Power Windows",
-      "name": "powerWindows",
+      "label": "Power Door Locks",
+      "name": "powerDoorLocks",
       "fieldType": "checkbox"
     },
     {
-      "label": "Tinted Windows",
-      "name": "tintedWindows",
+      "label": "Fog Lights Front",
+      "name": "fogLightsFront",
       "fieldType": "checkbox"
     },
     {
-      "label": "Automatic Climate Control",
-      "name": "automaticClimateControl",
+      "label": "Windows - Electric",
+      "name": "windowsElectric",
       "fieldType": "checkbox"
     },
     {
-      "label": "Rear Seat Entertainment System",
-      "name": "rearSeatEntertainmentSystem",
+      "label": "Apple CarPlay",
+      "name": "appleCarPlay",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Power Steering",
+      "name": "powerSteering",
       "fieldType": "checkbox"
     }
   ]

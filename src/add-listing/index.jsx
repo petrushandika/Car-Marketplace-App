@@ -1,21 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
-import CarDetails from "../components/shared/CarDetails.json";
+import carDetails from "../components/shared/carDetails.json";
 import InputField from "./components/InputField";
 import DropdownField from "./components/DropdownField";
 import TextareaField from "./components/TextareaField";
 import { Separator } from "../components/ui/separator";
-import Features from "../components/shared/Features.json";
+import features from "../components/shared/features.json";
 import CheckBoxField from "./components/CheckBoxField";
 import { Button } from "../components/ui/button";
+import db from "./../../configs";
+import { CarListing } from "../../configs/schema";
+import IconField from "./components/IconField";
 
 function AddListing() {
   const [formData, setFormData] = useState([]);
+  const [featuresData, setfeaturesData] = useState([]);
 
   useEffect(() => {
     console.log(formData);
-  }, [formData]);
+    console.log(featuresData);
+  }, [formData, featuresData]);
 
+  /**
+   * Used to capture user input from form
+   * @param {*} name
+   * @param {*} value
+   */
   const handleInputChange = (name, value) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -23,9 +33,33 @@ function AddListing() {
     }));
   };
 
-  const onSubmit = (e) => {
+  /**
+   * Used to save Feature List
+   * @param {*} name
+   * @param {*} value
+   */
+  const handleFeatureChange = (name, value) => {
+    setfeaturesData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const onSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+
+    try {
+      const result = await db.insert(CarListing).values({
+        ...formData,
+        features: featuresData,
+      });
+      if (result) {
+        console.log("Data Saved");
+      }
+    } catch (error) {
+      console.log("Data Error", error);
+    }
   };
 
   return (
@@ -38,9 +72,10 @@ function AddListing() {
           <div>
             <h2 className="font-medium text-xl mb-6">Car Details</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {CarDetails.CarDetails.map((item, index) => (
+              {carDetails.carDetails.map((item, index) => (
                 <div key={index}>
-                  <label className="text-sm">
+                  <label className="text-sm flex gap-2 items-center mb-2">
+                    <IconField icon={item?.icon} />
                     {item?.label}{" "}
                     {item.required && <span className="text-red-500">*</span>}
                   </label>
@@ -68,16 +103,16 @@ function AddListing() {
 
           {/* Feature List */}
           <div>
-            <h2 className="font-medium text-xl my-6">Features</h2>
+            <h2 className="font-medium text-xl my-6">features</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-              {Features.Features.map((item, index) => (
+              {features.features.map((item, index) => (
                 <div
                   key={index}
                   className="flex gap-2 items-center"
                 >
                   <CheckBoxField
                     onCheckedChange={(value) =>
-                      handleInputChange(item.name, value)
+                      handleFeatureChange(item.name, value)
                     }
                   />
                   <h2>{item.label}</h2>
