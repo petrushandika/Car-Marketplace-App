@@ -11,10 +11,17 @@ import { Button } from "../components/ui/button";
 import db from "./../../configs";
 import { CarListing } from "../../configs/schema";
 import IconField from "./components/IconField";
+import UploadImages from "./components/UploadImages";
+import { BiLoaderAlt } from "react-icons/bi";
+import { toast } from "../components/ui/sonner";
+import { useNavigate } from "react-router-dom";
 
 function AddListing() {
   const [formData, setFormData] = useState([]);
   const [featuresData, setfeaturesData] = useState([]);
+  const [triggerUploadImages, setTriggerUploadImages] = useState();
+  const [loader, setLoader] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(formData);
@@ -46,16 +53,23 @@ function AddListing() {
   };
 
   const onSubmit = async (e) => {
+    setLoader(true);
     e.preventDefault();
     console.log(formData);
+    toast("Please Wait...");
 
     try {
-      const result = await db.insert(CarListing).values({
-        ...formData,
-        features: featuresData,
-      });
+      const result = await db
+        .insert(CarListing)
+        .values({
+          ...formData,
+          features: featuresData,
+        })
+        .returning({ id: CarListing.id });
       if (result) {
         console.log("Data Saved");
+        setTriggerUploadImages(result[0]?.id);
+        setLoader(false);
       }
     } catch (error) {
       console.log("Data Error", error);
@@ -100,7 +114,6 @@ function AddListing() {
             </div>
           </div>
           <Separator className="my-6" />
-
           {/* Feature List */}
           <div>
             <h2 className="font-medium text-xl my-6">features</h2>
@@ -120,10 +133,28 @@ function AddListing() {
               ))}
             </div>
           </div>
-
           {/* Car Image */}
+          <Separator className="my-6" />
+          <UploadImages
+            triggerUploadImages={triggerUploadImages}
+            setLoader={(v) => {
+              setLoader(v);
+              navigate("/profile");
+            }}
+          />
+
           <div className="mt-10 flex justify-end">
-            <Button onClick={(e) => onSubmit(e)}>Submit</Button>
+            <Button
+              disbled={loader}
+              onClick={(e) => onSubmit(e)}
+            >
+              {!loader ? (
+                "Submit"
+              ) : (
+                <BiLoaderAlt className="animate-spin text-lg" />
+              )}
+              Submit
+            </Button>
           </div>
         </form>
       </div>
