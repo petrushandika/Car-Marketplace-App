@@ -15,6 +15,8 @@ import UploadImages from "./components/UploadImages";
 import { BiLoaderAlt } from "react-icons/bi";
 import { toast } from "../components/ui/sonner";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "@clerk/clerk-react";
+import moments from "moments";
 
 function AddListing() {
   const [formData, setFormData] = useState([]);
@@ -22,6 +24,7 @@ function AddListing() {
   const [triggerUploadImages, setTriggerUploadImages] = useState();
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
+  const { user } = useUser();
 
   useEffect(() => {
     console.log(formData);
@@ -64,6 +67,8 @@ function AddListing() {
         .values({
           ...formData,
           features: featuresData,
+          createdBy: user?.primaryEmailAddress?.emailAddress,
+          postedOn: moments().format("DD/MM/yyyy"),
         })
         .returning({ id: CarListing.id });
       if (result) {
