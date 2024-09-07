@@ -1,0 +1,265 @@
+{
+  "CarDetails": [
+    {
+      "label": "Listing Title",
+      "name": "listingTitle",
+      "fieldType": "text",
+      "required": true,
+      "column": 2,
+      "icon": "FaClipboardList"
+    },
+    {
+      "label": "Tagline",
+      "name": "tagLine",
+      "fieldType": "text",
+      "column": 2,
+      "icon": "FaTag"
+    },
+    {
+      "label": "Original Price",
+      "name": "originalPrice",
+      "fieldType": "text",
+      "column": 1,
+      "icon": "FaDollarSign"
+    },
+    {
+      "label": "Selling Price",
+      "name": "sellingPrice",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "FaMoneyBillAlt"
+    },
+    {
+      "label": "Category",
+      "name": "category",
+      "fieldType": "dropdown",
+      "options": [
+        "Sedan",
+        "SUV",
+        "Truck",
+        "Coupe",
+        "Convertible",
+        "Van",
+        "Hatchback",
+        "Electric",
+        "Hybrid"
+      ],
+      "required": true,
+      "column": 1,
+      "icon": "FaCar"
+    },
+    {
+      "label": "Condition",
+      "name": "condition",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["New", "Used", "Certified Pre-Owned"],
+      "column": 1,
+      "icon": "FaCheckCircle"
+    },
+    {
+      "label": "Type",
+      "name": "type",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Electric", "Hybrid", "Petrol", "Diesel"],
+      "column": 1,
+      "icon": "FaChargingStation"
+    },
+    {
+      "label": "Make",
+      "name": "make",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": [
+        "Nissan",
+        "BMW",
+        "Hyundai",
+        "Toyota",
+        "Honda",
+        "Ford",
+        "Chevrolet",
+        "Audi",
+        "Mercedes-Benz",
+        "Volkswagen"
+      ],
+      "column": 1,
+      "icon": "FaCarSide"
+    },
+    {
+      "label": "Model",
+      "name": "model",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Altima", "3 Series", "Elantra", "Others"],
+      "column": 1,
+      "icon": "FaCarAlt"
+    },
+    {
+      "label": "Year",
+      "name": "year",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": [
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "column": 1,
+      "icon": "FaCalendarAlt"
+    },
+    {
+      "label": "Drive Type",
+      "name": "driveType",
+      "fieldType": "dropdown",
+      "options": ["FWD", "RWD", "AWD", "4WD"],
+      "column": 1,
+      "icon": "FaCogs"
+    },
+    {
+      "label": "Transmission",
+      "name": "transmission",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Automatic", "Manual", "CVT"],
+      "column": 1,
+      "icon": "FaCog"
+    },
+    {
+      "label": "Fuel Type",
+      "name": "fuelType",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Petrol", "Diesel", "Electric", "Hybrid"],
+      "column": 1,
+      "icon": "FaGasPump"
+    },
+    {
+      "label": "Mileage",
+      "name": "mileage",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": [
+        "0-10,000 miles",
+        "10,001-20,000 miles",
+        "20,001-30,000 miles",
+        "30,001-50,000 miles",
+        "50,001-75,000 miles",
+        "75,001-100,000 miles",
+        "100,001+ miles"
+      ],
+      "column": 1,
+      "icon": "FaTachometerAlt"
+    },
+    {
+      "label": "Engine Size",
+      "name": "engineSize",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "FaCog"
+    },
+    {
+      "label": "Cylinder",
+      "name": "cylinder",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "FaCogs"
+    },
+    {
+      "label": "Color",
+      "name": "color",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": [
+        "Black",
+        "White",
+        "Gray",
+        "Blue",
+        "Red",
+        "Silver",
+        "Green",
+        "Yellow"
+      ],
+      "column": 1,
+      "icon": "FaPalette"
+    },
+    {
+      "label": "Doors",
+      "name": "doors",
+      "fieldType": "text",
+      "required": true,
+      "options": ["2", "3", "4", "5"],
+      "column": 1,
+      "icon": "FaDoorOpen"
+    },
+    {
+      "label": "VIN",
+      "name": "vin",
+      "fieldType": "text",
+      "required": true,
+      "column": 2,
+      "icon": "FaBarcode"
+    },
+    {
+      "label": "Offer Type",
+      "name": "offerType",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["For Sale", "For Lease"],
+      "column": 1,
+      "icon": "FaHandshake"
+    },
+    {
+      "label": "Listing Description",
+      "name": "listingDescription",
+      "fieldType": "textarea",
+      "column": 2,
+      "icon": "FaFileAlt"
+    }
+  ]
+}

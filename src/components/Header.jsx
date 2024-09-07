@@ -2,9 +2,10 @@ import React from "react";
 import logo from "../assets/logo.png";
 import { UserButton, useUser } from "@clerk/clerk-react";
 import { Button } from "../components/ui/button";
+import { Link } from "react-router-dom";
 
 function Header() {
-  const { user, isSignedIn } = useUser();
+  const { isSignedIn } = useUser();
 
   return (
     <div className="flex justify-between items-center shadow-sm p-5">
@@ -32,14 +33,12 @@ function Header() {
         </li>
       </ul>
 
-      {isSignedIn ? (
-        <div className="flex items-center gap-5">
-          <UserButton />
+      <div className="flex items-center gap-5">
+        {isSignedIn && <UserButton />}
+        <Link to={"/profile"}>
           <Button>Submit Listing</Button>
-        </div>
-      ) : (
-        <Button>Submit Listing</Button>
-      )}
+        </Link>
+      </div>
     </div>
   );
 }

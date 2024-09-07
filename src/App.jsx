@@ -1,18 +1,27 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
+import HomePage from "./pages/Home.jsx";
+import Contact from "./pages/Contact.jsx";
+import Profile from "./profile/index.jsx";
+import AddListing from "./add-listing/index.jsx";
 
 function App() {
   return (
     <Routes>
       <Route
         path="/"
-        element={<Home />}
+        element={<HomePage />}
       />
       <Route
         path="/contact"
         element={<Contact />}
+      />
+      <Route
+        path="/profile"
+        element={<Profile />}
+      />
+      <Route
+        path="/add-listing"
+        element={<AddListing />}
       />
     </Routes>
   );
