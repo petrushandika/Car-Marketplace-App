@@ -13,10 +13,10 @@ import { CarListing } from "../../configs/schema";
 import IconField from "./components/IconField";
 import UploadImages from "./components/UploadImages";
 import { BiLoaderAlt } from "react-icons/bi";
-import { toast } from "../components/ui/sonner";
+import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
-import moments from "moments";
+import moment from "moment";
 
 function AddListing() {
   const [formData, setFormData] = useState([]);
@@ -68,7 +68,7 @@ function AddListing() {
           ...formData,
           features: featuresData,
           createdBy: user?.primaryEmailAddress?.emailAddress,
-          postedOn: moments().format("DD/MM/yyyy"),
+          postedOn: moment().format("DD/MM/yyyy"),
         })
         .returning({ id: CarListing.id });
       if (result) {
@@ -150,7 +150,7 @@ function AddListing() {
 
           <div className="mt-10 flex justify-end">
             <Button
-              disbled={loader}
+              disabled={loader}
               onClick={(e) => onSubmit(e)}
             >
               {!loader ? (
@@ -158,7 +158,6 @@ function AddListing() {
               ) : (
                 <BiLoaderAlt className="animate-spin text-lg" />
               )}
-              Submit
             </Button>
           </div>
         </form>
