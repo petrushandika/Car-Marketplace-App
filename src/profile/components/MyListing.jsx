@@ -7,7 +7,6 @@ import { CarImages, CarListing } from "../../../configs/schema";
 import { desc, eq } from "drizzle-orm";
 import Service from "../../components/shared/Service";
 import CarItem from "../../components/CarItem";
-import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 function MyListing() {
@@ -27,6 +26,8 @@ function MyListing() {
       .leftJoin(CarImages, eq(CarListing.id, CarImages.carListingId))
       .where(eq(CarListing.createdBy, user?.primaryEmailAddress?.emailAddress))
       .orderBy(desc(CarListing.id));
+
+    console.log("result", result);
 
     const resp = Service.FormatResult(result);
     console.log("x", resp);

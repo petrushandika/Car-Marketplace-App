@@ -12,7 +12,7 @@ function CarItem({ car }) {
         New
       </h2>
       <img
-        src={car?.images}
+        src={car?.images[0]?.imageUrl}
         alt={car?.name}
         className="w-full h-[180px] rounded-t-xl object-cover"
       />
