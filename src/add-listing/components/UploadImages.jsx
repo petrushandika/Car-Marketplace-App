@@ -2,7 +2,6 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import React, { useEffect, useState } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 import { storage } from "../../../configs/firebase";
-import { Button } from "../../components/ui/button";
 import { CarImages } from "../../../configs/schema";
 import db from "../../../configs";
 
