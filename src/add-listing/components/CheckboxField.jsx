@@ -1,10 +1,13 @@
 import React from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 
-function CheckBoxField({ onCheckedChange }) {
+function CheckBoxField({ checked, onCheckedChange }) {
   return (
     <div>
-      <Checkbox onCheckedChange={onCheckedChange} />
+      <Checkbox
+        checked={checked}
+        onCheckedChange={onCheckedChange}
+      />
     </div>
   );
 }

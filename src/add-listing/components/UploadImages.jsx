@@ -4,9 +4,20 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { storage } from "../../../configs/firebase";
 import { CarImages } from "../../../configs/schema";
 import db from "../../../configs";
+import { eq } from "drizzle-orm";
 
-function UploadImages({ triggerUploadImages, setLoader }) {
+function UploadImages({ triggerUploadImages, setLoader, carInfo, mode }) {
   const [selectedFileList, setSelectedFileList] = useState([]);
+  const [editCarImageList, setEditCarImageList] = useState([]);
+
+  useEffect(() => {
+    if (mode == "edit") {
+      setEditCarImageList([]);
+      carInfo?.images.forEach((image) => {
+        setEditCarImageList((prev) => [...prev, image?.imageUrl]);
+      });
+    }
+  }, [carInfo]);
 
   useEffect(() => {
     if (triggerUploadImages) {
@@ -26,9 +37,16 @@ function UploadImages({ triggerUploadImages, setLoader }) {
     }
   };
 
-  const onImageRemove = (image, index) => {
-    const result = selectedFileList.filter((item) => item !== image);
-    setSelectedFileList(result);
+  const onImageRemoveFromDB = async (image, index) => {
+    const result = await db
+      .delete(CarImages)
+      .where(eq(CarImages.id, carInfo?.images[index]?.id))
+      .returning({
+        id: CarImages.id,
+      });
+
+    const imageList = editCarImageList.filter((item) => item != image);
+    setEditCarImageList(imageList);
   };
 
   const UploadImagesToServer = async () => {
@@ -45,8 +63,6 @@ function UploadImages({ triggerUploadImages, setLoader }) {
         })
         .then((resp) => {
           getDownloadURL(storageRef).then(async (downloadUrl) => {
-            console.log(downloadUrl);
-
             await db.insert(CarImages).values({
               imageUrl: downloadUrl,
               carListingId: triggerUploadImages,
@@ -60,26 +76,27 @@ function UploadImages({ triggerUploadImages, setLoader }) {
   return (
     <div>
       <h2 className="font-medium text-xl my-3">Upload Car Images</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
-        {selectedFileList.map((image, index) => (
-          <div
-            key={index}
-            className="relative"
-          >
-            <IoIosCloseCircle
-              className="absolute top-2 right-2 text-lg text-white cursor-pointer"
-              onClick={() => onImageRemove(image, index)}
-            />
-            <img
-              src={URL.createObjectURL(image)}
-              className="w-full h-[130px] object-cover rounded-xl"
-              alt={`preview-${index}`}
-            />
-          </div>
-        ))}
+      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-5">
+        {mode == "edit" &&
+          editCarImageList.map((image, index) => (
+            <div
+              key={index}
+              className="relative"
+            >
+              <IoIosCloseCircle
+                className="absolute top-2 right-2 text-lg text-white cursor-pointer"
+                onClick={() => onImageRemoveFromDB(image, index)}
+              />
+              <img
+                src={image}
+                className="w-full h-[130px] object-cover rounded-xl border"
+                alt={`preview-${index}`}
+              />
+            </div>
+          ))}
 
         <label htmlFor="upload-images">
-          <div className="border rounded-xl border-dotted border-primary bg-blue-100 p-10 cursor-pointer hover:shadow-md">
+          <div className="h-[130px] flex justify-center items-center border rounded-xl border-dotted border-primary bg-blue-100 p-10 cursor-pointer hover:shadow-md">
             <h2 className="text-lg text-center text-primary">+</h2>
           </div>
         </label>
