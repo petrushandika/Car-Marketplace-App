@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
-import carDetails from "../components/shared/carDetails.json";
+import carDetails from "@/components/shared/carDetails.json";
 import InputField from "./components/InputField";
 import DropdownField from "./components/DropdownField";
 import TextareaField from "./components/TextareaField";
