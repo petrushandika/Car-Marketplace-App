@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 function Category() {
   return (
-    <div className="mt-40">
-      <h2 className="font-bold text-3xl text-center mb-6">Browse By Type</h2>
+    <div className="mt-40 md:mt-56">
+      <h2 className="font-bold text-3xl text-center my-6">Browse By Type</h2>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-6 px-20">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-6 px-10 md:px-16 lg:px-20">
         {Data.Category.map((category) => (
           <Link
             key={category.id}
@@ -19,7 +19,7 @@ function Category() {
                 alt={category.name}
                 className="w-9"
               />
-              <h2>{category.name}</h2>
+              <h2 className="text-xs lg:text-lg">{category.name}</h2>
             </div>
           </Link>
         ))}

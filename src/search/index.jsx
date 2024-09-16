@@ -5,8 +5,8 @@ import { CarImages, CarListing } from "../../configs/schema";
 import { eq } from "drizzle-orm";
 import Service from "../components/shared/Service";
 import Header from "../components/Header";
-import { Search } from "lucide-react";
 import CarItem from "../components/CarItem";
+import Search from "../components/Search";
 
 function SearchByOptions() {
   const [searchParams] = useSearchParams();

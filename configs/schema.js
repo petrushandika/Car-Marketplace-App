@@ -25,7 +25,11 @@ export const CarListing = pgTable("carListing", {
   listingDescription: varchar("listingDescription").notNull(),
   features: json("features"),
   images: json("images"),
-  createdBy: varchar("createdBy").notNull().default("Petrus Handika"),
+  createdBy: varchar("createdBy").notNull(),
+  userName: varchar("userName").notNull().default("Petrus Handika"),
+  userImageUrl: varchar("userImageUrl").default(
+    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.myxxgirl.com%2Fgif%2Fanimated-peppy-usagyuuun-in-2022-cute-gif-music-stickers-animation.htm&psig=AOvVaw3X9w1gW24zowqaPUcLhFR8&ust=1726555921515000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMj14ZvwxogDFQAAAAAdAAAAABAt"
+  ),
   postedOn: varchar("postedOn"),
 });
 
