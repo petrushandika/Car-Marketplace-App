@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import MyListing from "./components/MyListing";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Inbox from "./components/Inbox";
 
 function Profile() {
   return (
@@ -20,7 +21,9 @@ function Profile() {
           <TabsContent value="my-listing">
             <MyListing />
           </TabsContent>
-          <TabsContent value="inbox">Inbox Tab</TabsContent>
+          <TabsContent value="inbox">
+            <Inbox />
+          </TabsContent>
           <TabsContent value="profile">Profile Tab</TabsContent>
         </Tabs>
       </div>
