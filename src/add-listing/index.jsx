@@ -47,9 +47,10 @@ function AddListing() {
       .where(eq(CarListing.id, recordId));
 
     const resp = Service.FormatResult(result);
+    console.log("resp", resp);
     setCarInfo(resp[0]);
     setFormData(resp[0]);
-    setFeaturesData(resp[0].features);
+    setFeaturesData(resp[0]?.features || []);
   };
 
   useEffect(() => {
@@ -94,8 +95,6 @@ function AddListing() {
           ...formData,
           features: featuresData,
           createdBy: user?.primaryEmailAddress?.emailAddress,
-          userName: user?.fullName,
-          userImageUrl: user?.imageUrl,
           postedOn: moment().format("DD/MM/yyyy"),
         })
         .where(eq(CarListing.id, recordId))
@@ -111,8 +110,6 @@ function AddListing() {
             ...formData,
             features: featuresData,
             createdBy: user?.primaryEmailAddress?.emailAddress,
-            userName: user?.fullName,
-            userImageUrl: user?.imageUrl,
             postedOn: moment().format("DD/MM/yyyy"),
           })
           .returning({ id: CarListing.id });

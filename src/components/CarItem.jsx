@@ -14,7 +14,7 @@ function CarItem({ car }) {
       <img
         src={car?.images[0]?.imageUrl}
         alt={car?.name}
-        className="w-full h-[180px] rounded-t-xl object-cover"
+        className="w-full h-[180px] rounded-t-xl object-contain"
       />
       <div className="p-4">
         <h2 className="font-bold text-black text-lg mb-2">
