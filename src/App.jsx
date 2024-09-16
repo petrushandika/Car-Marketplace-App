@@ -5,6 +5,7 @@ import Contact from "./pages/Contact.jsx";
 import Profile from "./profile/index.jsx";
 import AddListing from "./add-listing/index.jsx";
 import { Toaster } from "sonner";
+import SearchByCategory from "./search/[category]/index.jsx";
 
 function App() {
   const { isSignedIn } = useAuth();
@@ -40,6 +41,10 @@ function App() {
         <Route
           path="/add-listing"
           element={<PrivateRoute element={<AddListing />} />}
+        />
+        <Route
+          path="/search/:category"
+          element={<PrivateRoute element={<SearchByCategory />} />}
         />
       </Routes>
     </>
