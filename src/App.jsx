@@ -6,6 +6,7 @@ import Profile from "./profile/index.jsx";
 import AddListing from "./add-listing/index.jsx";
 import { Toaster } from "sonner";
 import SearchByCategory from "./search/[category]/index.jsx";
+import SearchByOptions from "./search/index.jsx";
 
 function App() {
   const { isSignedIn } = useAuth();
@@ -41,6 +42,10 @@ function App() {
         <Route
           path="/add-listing"
           element={<PrivateRoute element={<AddListing />} />}
+        />
+        <Route
+          path="/search"
+          element={<PrivateRoute element={<SearchByOptions />} />}
         />
         <Route
           path="/search/:category"

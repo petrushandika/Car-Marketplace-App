@@ -1,7 +1,7 @@
 const CarMakes = [
   {
     id: 1,
-    name: "Audi",
+    name: "Nissan",
   },
   {
     id: 2,
@@ -9,26 +9,86 @@ const CarMakes = [
   },
   {
     id: 3,
+    name: "Hyundai",
+  },
+  {
+    id: 4,
+    name: "Toyota",
+  },
+  {
+    id: 5,
+    name: "Honda",
+  },
+  {
+    id: 6,
     name: "Ford",
+  },
+  {
+    id: 7,
+    name: "Chevrolet",
+  },
+  {
+    id: 8,
+    name: "Audi",
+  },
+  {
+    id: 9,
+    name: "Mercedes-Benz",
+  },
+  {
+    id: 10,
+    name: "Volkswagen",
   },
 ];
 
 const Pricing = [
   {
     id: 1,
-    amount: "1000$",
+    amount: "1.000$",
   },
   {
     id: 2,
-    amount: "2000$",
+    amount: "2.000$",
   },
   {
     id: 3,
-    amount: "5000$",
+    amount: "3.000$",
   },
   {
     id: 4,
-    amount: "10000$",
+    amount: "5.000$",
+  },
+  {
+    id: 5,
+    amount: "10.000$",
+  },
+  {
+    id: 6,
+    amount: "20.000$",
+  },
+  {
+    id: 7,
+    amount: "30.000$",
+  },
+  {
+    id: 8,
+    amount: "50.000$",
+  },
+  {
+    id: 9,
+    amount: "75.000$",
+  },
+  {
+    id: 10,
+    amount: "100.000$",
+  },
+  {
+    id: 11,
+    amount: "200.000$",
+  },
+  {
+    id: 12,
+    amount: "300.000$",
   },
 ];
 
@@ -55,38 +115,38 @@ const Category = [
   },
   {
     id: 3,
-    name: "Hatchback",
-    icon: hatchbackIcon,
-  },
-  {
-    id: 4,
-    name: "Electric",
-    icon: electricIcon,
-  },
-  {
-    id: 5,
     name: "Truck",
     icon: truckIcon,
   },
   {
-    id: 6,
-    name: "Convertible",
-    icon: convertibleIcon,
-  },
-  {
-    id: 7,
-    name: "Hybrid",
-    icon: hybridIcon,
-  },
-  {
-    id: 8,
+    id: 4,
     name: "Coupe",
     icon: coupeIcon,
   },
   {
-    id: 9,
+    id: 5,
+    name: "Convertible",
+    icon: convertibleIcon,
+  },
+  {
+    id: 6,
     name: "Van",
     icon: vanIcon,
+  },
+  {
+    id: 7,
+    name: "Hatchback",
+    icon: hatchbackIcon,
+  },
+  {
+    id: 8,
+    name: "Electric",
+    icon: electricIcon,
+  },
+  {
+    id: 9,
+    name: "Hybrid",
+    icon: hybridIcon,
   },
 ];
 
